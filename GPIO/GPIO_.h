@@ -93,9 +93,11 @@ __IO uint32_t GPIOx_ODR;
 #define GPIOJ__     (GPIO_REGISTER*)(GPIOJ)
 #define GPIOK__     (GPIO_REGISTER*)(GPIOK)
 
-
 #define RCC__      (RCC_REGISTER*)(RCC_BASE)
 
-void PIN_W(char GPIO,int PIN_);
 
+
+
+
+void PIN_set(char GPIO,int PIN_,int data);
 #endif
