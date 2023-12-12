@@ -1,6 +1,8 @@
 // @Autor Lahmadi othmane
 // GPIO Library v0.1
 
+#include <stdint.h>
+
 #ifndef _GPIO_H
 #define _GPIO_H
 #define AHB1_BASE         0x40020000UL
@@ -64,6 +66,35 @@
 
 #define PIN13              (1U<<13)
 #define PIN14              (1U<<14)
+
+#define __IO volatile
+
+typedef struct{
+__IO uint32_t DUMMY[12];
+__IO uint32_t RCC_AHB1ENR;
+}RCC_REGISTER;
+
+typedef struct 
+{
+__IO uint32_t GPIOx_MODER;
+__IO uint32_t DUMMY[4];
+__IO uint32_t GPIOx_ODR;
+}GPIO_REGISTER;
+
+#define GPIOA__     (GPIO_REGISTER*)(GPIOA)
+#define GPIOB__     (GPIO_REGISTER*)(GPIOB)
+#define GPIOC__     (GPIO_REGISTER*)(GPIOC)
+#define GPIOD__     (GPIO_REGISTER*)(GPIOD)
+#define GPIOE__     (GPIO_REGISTER*)(GPIOE)
+#define GPIOF__     (GPIO_REGISTER*)(GPIOF)
+#define GPIOG__     (GPIO_REGISTER*)(GPIOG)
+#define GPIOH__     (GPIO_REGISTER*)(GPIOH)
+#define GPIOI__     (GPIO_REGISTER*)(GPIOI)
+#define GPIOJ__     (GPIO_REGISTER*)(GPIOJ)
+#define GPIOK__     (GPIO_REGISTER*)(GPIOK)
+
+
+#define RCC__      (RCC_REGISTER*)(RCC_BASE)
 
 void PIN_W(char GPIO,int PIN_);
 

@@ -1,83 +1,86 @@
 #include "GPIO_.h"
+
+
 void PIN_W(char GPIO,int PIN_){
 switch (GPIO){
 
 case 'A':
-RCC_AHB1ENR_BASE|=(1<<0);
-GPIOA_MODER|=(1U<<(PIN_*2));
-GPIOA_MODER&=~(1U<<(PIN_*2 +1));
-GPIOG_OUT|=PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<0);
+(*GPIOA__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOA__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOA__).GPIOx_ODR|=(1U<<PIN_);
 break;
+
 
 
 case 'B':
-RCC_AHB1ENR_BASE|=(1<<1);
-GPIOB_MODER|=(1U<<(PIN_*2));
-GPIOB_MODER&=~(1U<<(PIN_*2 +1));
-GPIOB_OUT|=PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<1);
+(*GPIOB__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOB__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOB__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'C':
-RCC_AHB1ENR_BASE|=(1<<2);
-GPIOC_MODER|=(1U<<(PIN_*2));
-GPIOC_MODER&=~(1U<<(PIN_*2 +1));
-GPIOC_OUT|=PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<2);
+(*GPIOC__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOC__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOC__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'D':
-RCC_AHB1ENR_BASE|=(1<<3);
-GPIOD_MODER|=(1U<<(PIN_*2));
-GPIOD_MODER&=~(1U<<(PIN_*2 +1));
-GPIOD_OUT|=PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<3);
+(*GPIOD__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOD__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOD__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'E':
-RCC_AHB1ENR_BASE|=(1<<4);
-GPIOE_MODER|=(1U<<(PIN_*2));
-GPIOE_MODER&=~(1U<<(PIN_*2 +1));
-GPIOE_OUT|=PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<4);
+(*GPIOE__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOE__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOE__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'F':
-RCC_AHB1ENR_BASE|=(1<<5);
-GPIOF_MODER|=(1U<<(PIN_*2));
-GPIOF_MODER&=~(1U<<(PIN_*2 +1));
-GPIOF_OUT|=PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<5);
+(*GPIOF__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOF__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOF__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'G':
-RCC_AHB1ENR_BASE|=(1<<6);
-GPIOG_MODER|=(1U<<(PIN_*2));
-GPIOG_MODER&=~(1U<<(PIN_*2 +1));
-GPIOG_OUT|=(1<<PIN_);
+(*RCC__).RCC_AHB1ENR|=(1<<6);
+(*GPIOG__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOG__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOG__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'H':
-RCC_AHB1ENR_BASE|=(1<<7);
-GPIOH_MODER|=(1U<<(PIN_*2));
-GPIOH_MODER&=~(1U<<(PIN_*2 +1));
-GPIOH_OUT|=1<<PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<7);
+(*GPIOH__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOH__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOH__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'I':
-RCC_AHB1ENR_BASE|=(1<<8);
-GPIOI_MODER|=(1U<<(PIN_*2));
-GPIOI_MODER&=~(1U<<(PIN_*2 +1));
-GPIOI_OUT|=1<<PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<8);
+(*GPIOI__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOI__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOI__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'J':
-RCC_AHB1ENR_BASE|=(1<<9);
-GPIOJ_MODER|=(1U<<(PIN_*2));
-GPIOJ_MODER&=~(1U<<(PIN_*2 +1));
-GPIOJ_OUT|=1<<PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<9);
+(*GPIOJ__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOJ__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOJ__).GPIOx_ODR|=(1U<<PIN_);
 break;
 
 case 'K':
-RCC_AHB1ENR_BASE|=(1<<10);
-GPIOK_MODER|=(1U<<(PIN_*2));
-GPIOK_MODER&=~(1U<<(PIN_*2 +1));
-GPIOK_OUT|=1<<PIN_;
+(*RCC__).RCC_AHB1ENR|=(1<<10);
+(*GPIOK__).GPIOx_MODER|=(1U<<(PIN_*2));
+(*GPIOK__).GPIOx_MODER&=~(1U<<(PIN_*2+1));
+(*GPIOK__).GPIOx_ODR|=(1U<<PIN_);
 break;
 default:
 break;
